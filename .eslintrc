@@ -1,0 +1,32 @@
+{
+  "extends": ["airbnb-base", "react-app", "plugin:prettier/recommended"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "camelcase": "off",
+    "no-return-assign": "off",
+    "class-methods-use-this": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default": "off",
+    "prefer-promise-reject-errors": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "no-console": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^log$"
+      }
+    ]
+  }
+}
