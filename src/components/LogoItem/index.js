@@ -1,3 +1,4 @@
+import { func, object, bool } from 'prop-types';
 import React from 'react';
 import { useDrag } from 'react-dnd';
 import './styles.scss';
@@ -32,4 +33,10 @@ export const LogoItem = ({
       <img className="logo-image" src={image} alt="React Logo" />
     </div>
   );
+};
+
+LogoItem.propTypes = {
+  item: object,
+  startTimer: func,
+  isFinished: bool
 };

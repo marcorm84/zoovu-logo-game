@@ -1,3 +1,4 @@
+import { func, object, string, bool } from 'prop-types';
 import React from 'react';
 import { useDrop } from 'react-dnd';
 import { LogoItem } from '../LogoItem';
@@ -33,4 +34,12 @@ export const Square = ({
       )}
     </div>
   );
+};
+
+Square.propTypes = {
+  item: object,
+  updateArrays: func,
+  startTimer: func,
+  isFinished: bool,
+  className: string
 };
