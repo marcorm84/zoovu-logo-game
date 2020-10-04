@@ -1,4 +1,4 @@
-This is a Project was created for Zoovu company.
+This Project was created for Zoovu company.
 
 ## Demo Video
 You can see the demo [here](https://www.loom.com/share/fa8eca00b4504fcca371379ea5ffc4fb)
