@@ -1,5 +1,8 @@
 This is a Project was created for Zoovu company.
 
+## Demo Video
+You can see the demo [here](https://www.loom.com/share/f254810484ef49d0b6f25b2bd140e6d9)
+
 ## Libraries used
 - [React-dnd](https://github.com/react-dnd/react-dnd)
 - [Material-ui](https://github.com/mui-org/material-ui)
