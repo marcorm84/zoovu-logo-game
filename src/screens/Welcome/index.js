@@ -17,11 +17,13 @@ export const Welcome = ({ setUsername }) => {
           onChange={({ target }) => {
             setValue(target.value);
           }}
+          data-testid="text-input"
           className="welcome-input"
           placeholder="Your name here"
         />
         <Button
           variant="contained"
+          data-testid="continue-button"
           onClick={() => setUsername(value)}
           className="welcome-button"
           endIcon={<ArrowRightAlt fontSize="large" />}
