@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { WelcomeScreen, GameScreen } from './screens';
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const [username, setUsername] = useState('');

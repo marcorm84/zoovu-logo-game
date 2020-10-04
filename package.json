@@ -1,6 +1,7 @@
 {
   "name": "zoovu-logo-game",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -30,6 +31,8 @@
     "sass-loader": "^10.0.2"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "jest-css-modules-transform": "^4.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

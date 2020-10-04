@@ -1,0 +1,25 @@
+@import "../../sass/utils/index";
+
+.game-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-items-row {
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+      margin: 15px;
+  }
+}
+
+.init-squares{
+  -webkit-box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 3px 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.target-squares {
+  border: 2px dashed $green;
+}

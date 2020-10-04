@@ -1,0 +1,10 @@
+@import "../../sass/utils/index";
+
+.square-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  border-radius: 15px;
+  padding: 5px;
+  justify-content: center;
+}

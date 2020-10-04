@@ -1,0 +1,32 @@
+@import "../../sass/utils/index";
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    :last-child {
+        text-align: right;
+    }
+}
+
+.info-username {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-score {
+    color: $purple;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.info-subtitle {
+    font-size: 14px;
+    color: $neutro1;
+}
+
+.info-margin-top {
+    margin-top: 50px;
+}

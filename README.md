@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Project was created for Zoovu company.
+
+## Libraries used
+- [React-dnd](https://github.com/react-dnd/react-dnd)
+- [Material-ui](https://github.com/mui-org/material-ui)
+- [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

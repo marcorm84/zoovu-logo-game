@@ -1,0 +1,65 @@
+/* Colors */
+
+$black:        hsl(0, 0%, 4%) !default;
+$black-bis:    hsl(0, 0%, 7%) !default;
+$black-ter:    hsl(0, 0%, 14%) !default;
+
+$grey-darker:  hsl(0, 0%, 21%) !default;
+$grey-dark:    hsl(0, 0%, 29%) !default;
+$neutro:       hsl(0, 0%, 39%) !default;
+$neutro1:      hsl(0, 0%, 56%) !default;
+$neutro2:      hsl(0, 0%, 64%) !default;
+$neutro3:      hsl(225, 25%, 97%) !default;
+
+$white-ter:    hsl(0, 0%, 96%) !default;
+$white-bis:    hsl(0, 0%, 98%) !default;
+$white:        hsl(0, 0%, 100%) !default;
+
+$orange:       hsl(14,  100%, 53%) !default;
+$yellow:       hsl(48,  100%, 67%) !default;
+$green:        hsl(128, 73%, 68%) !default;
+$blue:         hsl(220, 50%, 55%) !default;
+$light-blue:   hsl(219, 100%, 78%) !default;
+$purple:       hsl(271, 67%, 45%) !default;
+$red:          hsl(348, 100%, 61%) !default;
+
+$orange: #F59E27;
+$light-orange: #FEB44F;
+$strong-orange: #FE9300;
+
+$grey: #E0E0E0;
+$grey-light: #F0F0F0;
+$grey-lighter: #F5F5F4;
+/* Brand */
+
+$info: $blue !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $red !default;
+
+$dark: $grey-darker !default;
+
+
+/* Responsiveness */
+
+$tablet: 769px !default;
+$desktop: 1000px !default;
+$widescreen: 1192px !default;
+$fullhd: 1384px !default;
+
+
+/* Fonts */
+$lh-condensed-ultra: 1 !default;
+$lh-default: 1.2 !default;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+/* Body */
+
+$body-background-color: $white;
+$body-color: $dark;
+$body-font: "Roboto", BlinkMacSystemFont, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$body-font-size: 16px !default;
+$body-line-height: $lh-default !default;

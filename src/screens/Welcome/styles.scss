@@ -1,4 +1,28 @@
-.welcome-container {
+@import "../../sass/utils/index";
+
+.welcome-content {
     width: 300px;
     text-align: center;
+    > * {
+        margin-bottom: 30px !important;
+    }
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.welcome-input {
+    width: 100%;
+    text-align: center;
+}
+
+button.welcome-button {
+    width: 140px;
+    border-radius: 30px;
+    color: $purple;
+    background-color: #ffffff;
 }
