@@ -4,6 +4,11 @@ import { useDrop } from 'react-dnd';
 import { LogoItem } from '../LogoItem';
 import './styles.scss';
 
+const activeCondition = (init, target) => {
+  if (!init.droppable) return !target.active;
+  return true;
+};
+
 export const Square = ({
   item,
   updateArrays,
@@ -12,15 +17,11 @@ export const Square = ({
   className
 }) => {
   const [{ isOver, canDrop }, drop] = useDrop({
-    accept: item.type,
+    accept: ['z', 'o', 'v', 'u'],
     drop: dropedItem => {
-      updateArrays(dropedItem.index, item.index);
+      updateArrays(dropedItem, item);
     },
-    canDrop: dropedItem =>
-      dropedItem.type === item.type &&
-      item.droppable &&
-      !dropedItem.droppable &&
-      !item.active,
+    canDrop: dropedItem => item.droppable && activeCondition(dropedItem, item),
     collect: monitor => ({
       isOver: !!monitor.isOver(),
       canDrop: !!monitor.canDrop()

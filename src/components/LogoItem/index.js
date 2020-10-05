@@ -4,12 +4,12 @@ import { useDrag } from 'react-dnd';
 import './styles.scss';
 
 export const LogoItem = ({
-  item: { type, image, index, droppable },
+  item: { type, activeImage, index, droppable, image, activeType },
   startTimer,
   isFinished
 }) => {
   const [{ isDragging }, drag] = useDrag({
-    item: { type, index, droppable },
+    item: { type, index, droppable, image, activeImage, activeType },
     begin: () => {
       if (!isFinished) {
         startTimer();
@@ -30,7 +30,11 @@ export const LogoItem = ({
         cursor: 'move'
       }}
     >
-      <img className="logo-image" src={image} alt="React Logo" />
+      <img
+        className="logo-image"
+        src={droppable ? activeImage : image}
+        alt="React Logo"
+      />
     </div>
   );
 };

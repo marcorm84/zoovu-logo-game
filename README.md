@@ -1,7 +1,7 @@
 This Project was created for Zoovu company.
 
 ## Demo Video
-You can see the demo [here](https://www.loom.com/share/fa8eca00b4504fcca371379ea5ffc4fb)
+You can see the demo [here](https://www.loom.com/share/99de3074adf64fbdb54c6fde095b9024)
 
 ## Libraries used
 - [React-dnd](https://github.com/react-dnd/react-dnd)

@@ -4,7 +4,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { InfoBanner, Square, ExtraInfo } from '../../components';
 import { LOGO_TYPES } from '../../constants';
-import { initSquare, shuffleElements, isFinished } from '../../utils';
+import { initSquare, shuffleElements } from '../../utils';
 import './styles.scss';
 
 export const Game = ({ username }) => {
@@ -14,17 +14,54 @@ export const Game = ({ username }) => {
   const [targetSquares, setTargetSquares] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const updateArrays = (initIndex, targetIndex) => {
+  const isFinished = () => {
+    return targetSquares.every(item => item.match);
+  };
+
+  const initGame = () => {
+    // Initialice both arrays
+    setInitSquares(
+      shuffleElements(LOGO_TYPES).map((logoType, index) =>
+        initSquare(true, logoType, index)
+      )
+    );
+    setTargetSquares(
+      LOGO_TYPES.map((logoType, index) => initSquare(false, logoType, index))
+    );
+    setSeconds(0);
+  };
+
+  const updateArrays = (origin, target) => {
     setLoading(true);
-    initSquares[initIndex] = { ...initSquares[initIndex], active: false };
-    targetSquares[targetIndex] = {
-      ...targetSquares[targetIndex],
-      active: true
+    const match = (origin.activeType || origin.type) === target.type;
+    if (!match) {
+      // If it does not match, 10 extra seconds
+      setSeconds(seconds + 10);
+    }
+    const auxInitSquares = !origin.droppable ? initSquares : targetSquares;
+    auxInitSquares[origin.index] = {
+      ...auxInitSquares[origin.index],
+      active: target.active,
+      match: target.active && match,
+      activeImage: target.activeImage,
+      activeType: target.active ? target.activeType || target.type : null
     };
-    setInitSquares(initSquares);
+    targetSquares[target.index] = {
+      ...targetSquares[target.index],
+      active: true,
+      match,
+      activeImage: origin.droppable ? origin.activeImage : origin.image,
+      activeType: origin.activeType || origin.type
+    };
+    if (!origin.droppable) {
+      setInitSquares(auxInitSquares);
+    }
     setTargetSquares(targetSquares);
     setLoading(false);
-    if (isFinished(targetSquares)) setIsActive(false);
+    if (isFinished()) {
+      setIsActive(false);
+      setTimeout(() => initGame(), 10000);
+    }
   };
 
   const renderLogoItems = (logos, classes) => (
@@ -36,22 +73,14 @@ export const Game = ({ username }) => {
           updateArrays={updateArrays}
           item={logo}
           className={classes}
-          isFinished={isFinished(targetSquares)}
+          isFinished={isFinished()}
         ></Square>
       ))}
     </div>
   );
 
   useEffect(() => {
-    // Initialice both arrays
-    setInitSquares(
-      shuffleElements(LOGO_TYPES).map((logoType, index) =>
-        initSquare(true, logoType, index)
-      )
-    );
-    setTargetSquares(
-      LOGO_TYPES.map((logoType, index) => initSquare(false, logoType, index))
-    );
+    initGame();
   }, []);
 
   useEffect(() => {
@@ -72,7 +101,11 @@ export const Game = ({ username }) => {
       <DndProvider backend={HTML5Backend}>
         {!loading && (
           <div className="game-wrapper wrapper">
-            <InfoBanner username={username} seconds={seconds} />
+            <InfoBanner
+              username={username}
+              seconds={seconds}
+              isFinished={isFinished()}
+            />
             {renderLogoItems(initSquares, 'init-squares')}
             <ExtraInfo />
             {renderLogoItems(targetSquares, 'target-squares')}
